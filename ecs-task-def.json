@@ -1,0 +1,26 @@
+{
+  "family": "ecs-rds-task",
+  "networkMode": "awsvpc",
+  "executionRoleArn": "arn:aws:iam::406052550442:role/ReplatformECSRDSRole",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "containerDefinitions": [
+    {
+      "name": "ecs-rds-app",
+      "image": "406052550442.dkr.ecr.us-east-1.amazonaws.com/ecs-rds-app:latest",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        { "name": "DB_HOST", "value": "<rds-endpoint>" },
+        { "name": "DB_USER", "value": "admin" },
+        { "name": "DB_PASS", "value": "MySecurePass123!" },
+        { "name": "DB_NAME", "value": "myappdb" }
+      ]
+    }
+  ]
+}

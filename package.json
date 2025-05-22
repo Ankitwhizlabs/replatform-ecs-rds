@@ -1,0 +1,14 @@
+{
+  "name": "ecs-rds-app",
+  "version": "1.0.0",
+  "description": "Simple Node.js app for ECS + RDS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.1.0"
+  }
+}
+
